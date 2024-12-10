@@ -45,7 +45,7 @@ const compress = (inputStream: Readable, response: ServerResponse) => {
 
   const server = createServer(async (request, response) => {
     const { url = '' } = request;
-    const { pathname } = new URL(url);
+    const { pathname } = new URL('http://' + request.headers.host + url);
 
     logger.info(url);
 

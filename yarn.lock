@@ -1527,6 +1527,8 @@ __metadata:
   resolution: "app@workspace:packages/app"
   dependencies:
     "@dev/rspack": "npm:1.0.1"
+    react: "npm:18.3.1"
+    react-dom: "npm:18.3.1"
   languageName: unknown
   linkType: soft
 

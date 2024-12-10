@@ -6,6 +6,10 @@
     "build": "dev-bin build",
     "start": "node ./dist/server/main.js"
   },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
   "devDependencies": {
     "@dev/rspack": "1.0.1"
   }
