@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Sans-Variable';
+  src: url('./assets/Sans-Variable.woff2') format('woff2');
+  font-display: optional;
+}
+
+body {
+  font-family: 'Sans-Variable', sans-serif;
+}
+
+.button {
+  background-color: transparent;
+}

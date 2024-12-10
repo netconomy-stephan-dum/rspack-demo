@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "name": "app",
+  "scripts": {
+    "dev": "dev-bin serve",
+    "build": "dev-bin build",
+    "start": "node ./dist/server/main.js"
+  },
+  "devDependencies": {
+    "@dev/rspack": "1.0.1"
+  }
+}

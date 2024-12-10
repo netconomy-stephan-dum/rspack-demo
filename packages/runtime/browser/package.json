@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "name": "@runtime/browser",
+  "license": "MIT",
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/loadable__component": "5.13.9",
+    "@types/react-dom": "18.3.1"
+  }
+}

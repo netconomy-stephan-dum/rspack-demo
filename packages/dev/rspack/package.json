@@ -1,0 +1,24 @@
+{
+  "version": "1.0.1",
+  "name": "@dev/rspack",
+  "bin": {
+    "dev-bin": "./cli.mjs"
+  },
+  "devDependencies": {
+    "@loadable/webpack-plugin": "5.15.2",
+    "@module-federation/enhanced": "0.8.1",
+    "@rsdoctor/rspack-plugin": "0.4.11",
+    "@rspack/cli": "1.1.4",
+    "@rspack/core": "1.1.4",
+    "@rspack/plugin-react-refresh": "1.0.0",
+    "@runtime/browser": "1.0.0",
+    "@runtime/server": "1.0.0",
+    "@swc/plugin-loadable-components": "1.0.12",
+    "commander": "12.1.0",
+    "css-loader": "7.1.2",
+    "react-refresh": "0.14.2",
+    "run-script-webpack-plugin": "0.2.0",
+    "typescript": "5.7.2",
+    "webpack": "5.97.1"
+  }
+}

@@ -1,0 +1,10 @@
+node_modules
+dist
+.yarn/*
+.idea
+.swc
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

@@ -1,0 +1,21 @@
+{
+  "name": "@runtime/server",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@loadable/component": "5.16.4",
+    "@loadable/server": "5.16.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/loadable__server": "5.12.11",
+    "@types/react-dom": "18.3.1"
+  },
+  "scripts": {
+    "debug-dev": "yarn run --inspect-brk rspack serve",
+    "dev": "rspack serve",
+    "doctor": "RSDOCTOR=true rspack build",
+    "build": "rspack build"
+  }
+}

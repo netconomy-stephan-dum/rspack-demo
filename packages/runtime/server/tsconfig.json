@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["ES2020"],
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "types": ["node"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "target": "ES2020"
+  }
+}
