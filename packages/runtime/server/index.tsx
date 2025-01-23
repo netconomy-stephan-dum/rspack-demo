@@ -1,5 +1,5 @@
 import { createServer, ServerResponse } from 'node:http';
-import { join } from 'node:path';
+import { join, extname } from 'node:path';
 import { renderToString } from 'react-dom/server';
 import { ChunkExtractor } from '@loadable/server';
 import { readFile } from 'node:fs/promises';
@@ -33,6 +33,9 @@ const compress = (inputStream: Readable, response: ServerResponse) => {
     )
     .pipe(response);
 };
+const contentTypes: Record<string, string> = {
+  svg: 'image/svg+xml',
+};
 
 (async () => {
   const App = (await import(/* webpackMode: "eager" */ APP_ROOT)).default;
@@ -52,6 +55,10 @@ const compress = (inputStream: Readable, response: ServerResponse) => {
     const filePath = join(process.env.CWD || '', 'dist/web', pathname.slice(1));
 
     if (await fileExists(filePath)) {
+      const contentType = contentTypes[extname(filePath)];
+      if (contentType) {
+        response.setHeader('Content-Type', contentType);
+      }
       return compress(createReadStream(filePath), response);
     }
 
@@ -74,6 +81,6 @@ const compress = (inputStream: Readable, response: ServerResponse) => {
   });
 
   server.listen(PORT, () => {
-    logger.info(`The server is running at http://location:${PORT}`);
+    logger.info(`The server is running at http://localhost:${PORT}`);
   });
 })();

@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "rspack demo",
   "workspaces": [
-    "basic",
-    "server",
+    "example/**",
     "packages/**"
   ],
   "devDependencies": {

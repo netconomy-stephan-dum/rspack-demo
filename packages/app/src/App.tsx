@@ -3,6 +3,7 @@ import loadable from '@loadable/component';
 import styles from './App.scss';
 import github from './assets/github.svg';
 import helloWorld from './assets/hello_world.webp';
+import Icon from './Icon';
 
 const Async = loadable(() => import('./Async'));
 
@@ -28,7 +29,7 @@ const App = () => {
       {button}
       <Async />
       <img width="200" height="200" src={helloWorld} />
-      <img width="200" height="200" src={github} />
+      <Icon glyph={github} />
     </div>
   );
 };

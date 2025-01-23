@@ -2,6 +2,7 @@
   "version": "1.0.0",
   "name": "app",
   "scripts": {
+    "dev-debug": "dev-bin serve --inspect",
     "dev": "dev-bin serve",
     "build": "dev-bin build",
     "start": "node ./dist/server/main.js"

@@ -1,8 +1,9 @@
 import { CssExtractRspackPlugin, DefinePlugin } from '@rspack/core';
 import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
 import { createRequire } from 'node:module';
-import LoadablePlugin from '@loadable/webpack-plugin';
 import ReactRefreshRspackPlugin from '@rspack/plugin-react-refresh';
+import SVGPlugin from './svg-plugin.mjs';
+
 const { resolve } = createRequire(import.meta.url);
 
 const config = ({ RSPACK_BUILD }, { target }) => {
@@ -17,9 +18,17 @@ const config = ({ RSPACK_BUILD }, { target }) => {
     module: {
       rules: [
         {
-          test: /\.(png|jpe?g|woff2?|svg|webp)$/,
+          test: /\.(png|jpe?g|woff2?|webp)$/,
           type: 'asset',
           generator: { emit: target === 'web' },
+        },
+        {
+          issuer: /\.[jt]sx?$/,
+          test: /\.svg$/,
+          layer: 'svg-collect',
+          issuerLayer: '',
+          type: 'javascript/auto',
+          use: [resolve('./svg-loader.mjs')],
         },
         {
           test: /\.((css)|s[ca]ss)$/,
@@ -64,6 +73,7 @@ const config = ({ RSPACK_BUILD }, { target }) => {
       ],
     },
     plugins: [
+      new SVGPlugin(),
       new DefinePlugin({
         IS_PROD: isProduction,
         APP_ROOT: JSON.stringify(`${process.env.CWD}/src/App`),
@@ -81,6 +91,9 @@ const config = ({ RSPACK_BUILD }, { target }) => {
           },
         }),
     ].filter(Boolean),
+    experiments: {
+      layers: true,
+    },
   };
 };
 

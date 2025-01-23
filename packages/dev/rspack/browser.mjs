@@ -24,6 +24,7 @@ const config = (env, options) => {
       output: {
         path: outputPath,
         publicPath: '/',
+        clean: true,
       },
       plugins: [
         ...(commonConfig.plugins || []),

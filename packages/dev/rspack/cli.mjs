@@ -11,9 +11,12 @@ const options = {
   env: { CWD: process.cwd() },
 };
 
-program.command('serve').action(() => {
-  spawn('yarn', ['exec', 'rspack', 'serve'], options);
-});
+program
+  .command('serve')
+  .option('--inspect', 'enable debugging', false)
+  .action(({ inspect }) => {
+    spawn('yarn', ['run', inspect && '--inspect-brk', 'rspack', 'serve'].filter(Boolean), options);
+  });
 program.command('build').action(() => {
   spawn('yarn', ['exec', 'rspack', 'build'], options);
 });

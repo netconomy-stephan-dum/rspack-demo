@@ -14,8 +14,3 @@
 - show rsDoctor
 - add lazy chunk
 - add define plugin
-
-
-
-
-- module federation plugin?

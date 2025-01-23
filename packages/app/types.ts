@@ -6,8 +6,8 @@ declare module '*.scss' {
 }
 
 declare module '*.svg' {
-  const url: string;
-  export = url;
+  const glyph: [string, string, string];
+  export = glyph;
 }
 
 declare module '*.png' {
